@@ -1,6 +1,12 @@
-<h1>Editing <%= singular_table_name.titleize %></h1>
-
+<div>
+  <div class="w3-light-blue w3-display-middle w3-center" style="width:30%">
+    <h1 class="w3-center">Editing <%= singular_table_name.titleize %></h1>
+    <hr>
 <%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
-
+    <br>&nbsp;
+    <br>&nbsp;
 <%%= link_to 'Show', @<%= singular_table_name %> , class:"w3-button w3-light-gray" %> |
 <%%= link_to 'Back', <%= index_helper %>_path , class:"w3-button w3-light-gray"  %>
+    <br>&nbsp;
+</div>
+</div>

@@ -1,10 +1,11 @@
 <p id="notice" class="w3-panel"><%%= notice %></p>
 
-<h1><%= plural_table_name.titleize %></h1>
+<h1 class="w3-center"><%= plural_table_name.titleize %></h1>
 
-<table class="w3-table-all">
+<input class="w3-input w3-border w3-padding" type="text" placeholder="Search for <%= singular_table_name %>..." id="myInput" onkeyup="myFunction()">
+<table class="w3-table-all" id="myTable">
   <thead>
-    <tr>
+    <tr class="w3-light-blue">
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
       <th><%= attribute.human_name %></th>
 <% end -%>
@@ -25,7 +26,25 @@
     <%% end %>
   </tbody>
 </table>
-
-<br>
-
-<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_table_name %>_path , class:"w3-button w3-light-gray" %>
+<div class="w3-bar w3-light-blue">
+<%%= link_to '+ New <%= singular_table_name.titleize %>', new_<%= singular_table_name %>_path , class:"w3-button w3-left" %>
+</div>
+  <script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>

@@ -21,6 +21,12 @@
       <a href="/" class="w3-bar-item w3-button">Root</a>
       <a href="/static_pages/help" class="w3-bar-item w3-button">Help</a>
       <a href="/static_pages/about" class="w3-bar-item w3-button">About</a>
+      <% if session[:user_id] %>
+      <a href="/orders" class="w3-bar-item w3-button">Orders</a>
+      <a href="/products" class="w3-bar-item w3-button">Products</a>
+      <a href="/users" class="w3-bar-item w3-button">Users</a>
+        <%= button_to 'Logout', logout_path, method: :delete%>
+      <% end %>
       <!--<a href="/carts" class="w3-bar-item w3-button w3-right">View Cart</a>-->
     </div>
 

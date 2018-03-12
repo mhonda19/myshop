@@ -1,4 +1,6 @@
 <h1>Welcome</h1>
-It's <%= Time.now %> 
+The time now is <%= Time.now.strftime("%H:%M:%S") %>. 
 <br><br>
-We have <b><%= pluralize(@total_orders, "order") %></b>
+We have <b><%= pluralize(@total_orders, "order") %>!</b>
+<br><br>
+ <a href="orders" class="w3-center w3-button w3-light-blue" style="width:20%">View them now</a>

@@ -25,7 +25,9 @@
       <a href="/orders" class="w3-bar-item w3-button">Orders</a>
       <a href="/products" class="w3-bar-item w3-button">Products</a>
       <a href="/users" class="w3-bar-item w3-button">Users</a>
-        <%= button_to 'Logout', logout_path, method: :delete%>
+        <%= button_to 'Logout', logout_path, method: :delete, class: 'w3-bar-item w3-button w3-right'%>
+      <% else %>
+      <a href="/login" class="w3-bar-item w3-button w3-right">Login</a>
       <% end %>
       <!--<a href="/carts" class="w3-bar-item w3-button w3-right">View Cart</a>-->
     </div>
